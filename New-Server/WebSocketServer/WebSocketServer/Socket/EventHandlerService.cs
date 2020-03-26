@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.WebSockets;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace WebSocketServer.Socket
 {
@@ -11,7 +11,7 @@ namespace WebSocketServer.Socket
     {
         static HttpListener httpListener = new HttpListener();
         static AutoResetEvent signal = new AutoResetEvent(true);
-        static WebSocket webSocket;
+        static List<WebSocket> webSocketList = new List<WebSocket>();
 
         public async static void Start()
         {
@@ -24,7 +24,7 @@ namespace WebSocketServer.Socket
                 if (context.Request.IsWebSocketRequest)
                 {
                     HttpListenerWebSocketContext webSocketContext = await context.AcceptWebSocketAsync(null);
-                    webSocket = webSocketContext.WebSocket;
+                    webSocketList.Add(webSocketContext.WebSocket);
                 }
                 signal.Set();
             }
@@ -32,10 +32,13 @@ namespace WebSocketServer.Socket
 
         public async static void BroadcastMessage(string message)
         {
-            if (webSocket != null && webSocket.State == WebSocketState.Open)
+            foreach (var webSocket in webSocketList)
             {
-                await webSocket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(message)),
-                    WebSocketMessageType.Text, true, CancellationToken.None);
+                if (webSocket != null && webSocket.State == WebSocketState.Open)
+                {
+                    await webSocket.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(message)),
+                        WebSocketMessageType.Text, true, CancellationToken.None);
+                }
             }
         }
     }
