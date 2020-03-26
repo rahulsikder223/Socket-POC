@@ -1,0 +1,16 @@
+﻿2020-03-26 10:36:51,042 [1] INFO  WebSocketServer-12674872 - The server instance WebSocketServer-12674872 has been started!
+2020-03-26 10:38:26,876 [19] INFO  WebSocketServer-12674872 - Session: cb50b9e9-e3e3-44bd-86e6-90cb96d99151/127.0.0.1:58420
+A new session connected!
+2020-03-26 10:40:00,805 [1] INFO  WebSocketServer-12674872 - The server instance WebSocketServer-12674872 has been started!
+2020-03-26 10:40:22,694 [20] INFO  WebSocketServer-12674872 - Session: 6f21d37e-2479-4340-a6b9-61880d270935/127.0.0.1:58499
+A new session connected!
+2020-03-26 10:45:54,241 [28] INFO  WebSocketServer-12674872 - Session: 6f21d37e-2479-4340-a6b9-61880d270935/127.0.0.1:58499
+This session was closed for ClientClosing!
+2020-03-26 10:45:57,236 [18] INFO  WebSocketServer-12674872 - Session: e1ff267d-8966-45df-96c8-da582365a1c4/127.0.0.1:58752
+A new session connected!
+2020-03-26 11:08:58,607 [79] INFO  WebSocketServer-12674872 - Session: e1ff267d-8966-45df-96c8-da582365a1c4/127.0.0.1:58752
+This session was closed for ClientClosing!
+2020-03-26 11:09:12,700 [79] INFO  WebSocketServer-12674872 - Session: 3e834bf3-672c-4c23-b4aa-5e052a730690/127.0.0.1:59534
+A new session connected!
+2020-03-26 11:09:19,845 [79] INFO  WebSocketServer-12674872 - Session: 3e834bf3-672c-4c23-b4aa-5e052a730690/127.0.0.1:59534
+This session was closed for ClientClosing!
